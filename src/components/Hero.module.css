@@ -1,0 +1,166 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 140px 60px 0;  /* 🔥 increased top spacing */
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Label */
+.label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.2s var(--ease-out) forwards;
+}
+
+.label::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--c-accent);
+}
+
+/* Headline */
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 56px);  /* 🔥 smaller */
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 600px;
+}
+
+.line {
+  display: block;
+  opacity: 0;
+  transform: translateY(30px);
+  margin-bottom: 6px;
+  animation: lineUp 0.6s var(--ease-out) forwards;
+}
+
+.line:nth-child(1) { animation-delay: 0.3s; }
+.line:nth-child(2) { animation-delay: 0.45s; }
+.line:nth-child(3) { animation-delay: 0.6s; }
+
+.accent {
+  color: var(--c-accent);
+}
+
+.stroke {
+  -webkit-text-stroke: 1px var(--c-text);
+  opacity: 0.4;
+}
+
+/* Subtext */
+.sub {
+  margin-top: 20px;
+  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--c-muted);
+  opacity: 0;
+  animation: fadeUp 0.6s 0.8s var(--ease-out) forwards;
+}
+
+/* Actions */
+.actions {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  opacity: 0;
+  animation: fadeUp 0.6s 1s var(--ease-out) forwards;
+}
+
+/* Primary Button */
+.btnPrimary {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: #000;
+  background: var(--c-accent);
+
+  padding: 16px 42px;
+  border-radius: 6px;
+
+  transition: all 0.25s ease;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 45px var(--c-accent-glow);
+}
+
+/* Secondary Button */
+.btnGhost {
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s, gap 0.2s;
+}
+
+.btnGhost:hover {
+  color: var(--c-text);
+  gap: 10px;
+}
+
+.btnGhost svg {
+  transition: transform 0.2s;
+}
+
+.btnGhost:hover svg {
+  transform: translateX(4px);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 24px;
+  }
+
+  .headline {
+    font-size: 40px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

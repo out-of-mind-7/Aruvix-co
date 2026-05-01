@@ -1,0 +1,113 @@
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 120px 60px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.heading {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.sub {
+  font-size: 16px;
+  color: var(--c-muted);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: var(--c-card);
+  padding: 40px 30px;
+  border: 1px solid var(--c-border);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background: var(--c-card-hover);
+  transform: translateY(-6px);
+  border-color: var(--c-accent);
+}
+
+/* Title */
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Description */
+.desc {
+  font-size: 14px;
+  color: var(--c-muted);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 80px 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CTA section */
+.ctaBox {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.ctaText {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: var(--c-muted);
+}
+
+.ctaBtn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 6px;
+
+  background: linear-gradient(135deg, var(--c-accent), var(--c-accent2));
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  transition: all 0.25s ease;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--c-accent-glow);
+}
+
+.trust {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--c-dim);
+}

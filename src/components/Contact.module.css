@@ -1,0 +1,86 @@
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 120px 60px;
+  text-align: center;
+}
+
+/* Label */
+.label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: 20px;
+}
+
+/* Heading */
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+/* Accent word */
+.accentText {
+  color: var(--c-accent);
+}
+
+/* Subtext */
+.sub {
+  font-size: 15px;
+  color: var(--c-muted);
+  max-width: 420px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+}
+
+/* 🔥 PRIMARY CTA (Brand styled, not WhatsApp green) */
+.email {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  padding: 14px 30px;
+  border-radius: 6px;
+
+  background: linear-gradient(135deg, var(--c-accent), var(--c-accent2));
+  color: #fff;
+
+  transition: all 0.25s ease;
+}
+
+.email:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px var(--c-accent-glow);
+}
+
+/* Secondary email text */
+.secondary {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--c-muted);
+}
+
+/* Trust text */
+.trust {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--c-dim);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .section {
+    padding: 80px 24px;
+  }
+
+  .headline {
+    font-size: 28px;
+  }
+}

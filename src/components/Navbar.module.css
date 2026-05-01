@@ -1,0 +1,42 @@
+.links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.links li {
+  list-style: none;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: var(--c-accent);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 24px 60px;
+
+  z-index: 100;
+  background: rgba(5, 5, 8, 0.7);
+  backdrop-filter: blur(10px);
+}

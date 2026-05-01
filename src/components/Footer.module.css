@@ -1,0 +1,29 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--c-border);
+  padding: 32px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--c-surface);
+}
+
+.copy {
+  font-size: 13px;
+  color: var(--c-dim);
+  letter-spacing: 0.03em;
+}
+
+.brand { color: var(--c-accent); }
+
+.built {
+  font-size: 11px;
+  color: var(--c-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+}

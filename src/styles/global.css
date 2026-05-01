@@ -1,0 +1,105 @@
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Base */
+  --c-bg: #050508;
+  --c-surface: #0A0A0F;
+  --c-card: #0F0F17;
+  --c-card-hover: #151521;
+  --c-border: rgba(255, 255, 255, 0.08);
+
+  /* 🔥 Primary Accent (Electric Blue) */
+  --c-accent: #3B82F6;
+  --c-accent-strong: #60A5FA;
+  --c-accent-glow: rgba(59, 130, 246, 0.25);
+  --c-accent-border: rgba(59, 130, 246, 0.35);
+
+  /* ✨ Secondary Accent (Violet) */
+  --c-accent2: #8B5CF6;
+  --c-accent2-glow: rgba(139, 92, 246, 0.25);
+
+  /* Text */
+  --c-text: #EDEDED;
+  --c-muted: #8A8A8A;
+  --c-dim: rgba(255, 255, 255, 0.2);
+
+  /* Fonts */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-body);
+  font-weight: 300;
+
+  overflow-x: hidden;
+
+  /* 🔥 IMPORTANT: allow normal cursor for usability */
+  cursor: default;
+
+  -webkit-font-smoothing: antialiased;
+
+  /* ✅ Fix navbar overlap globally */
+  padding-top: 90px;
+}
+
+/* ✨ UNIQUE BACKGROUND GLOW (subtle, premium) */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: -20%;
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(circle, var(--c-accent2-glow), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ⚠️ Tone down noise (was too strong) */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+}
+
+/* Selection color (nice touch) */
+::selection {
+  background: var(--c-accent);
+  color: #050508;
+}
