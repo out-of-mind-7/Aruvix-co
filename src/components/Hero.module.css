@@ -3,12 +3,19 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
   padding: 140px 60px 0;  /* 🔥 increased top spacing */
   overflow: hidden;
   z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  padding-bottom: 60px; /* reduce gap */
+  justify-content: flex-start;
+  padding-top: 140px;
 }
+
+
+
 
 /* Label */
 .label {
@@ -39,6 +46,7 @@
   line-height: 1.1;
   letter-spacing: -0.02em;
   max-width: 600px;
+  
 }
 
 .line {
@@ -148,19 +156,68 @@
     transform: translateY(0);
   }
 }
-
-/* Responsive */
 @media (max-width: 768px) {
   .hero {
-    padding: 0 24px;
+    padding: 100px 20px 40px; /* ✅ keep top spacing */
   }
 
   .headline {
-    font-size: 40px;
+    font-size: 34px; /* ✅ stable readable size */
+    line-height: 1.2;
+  }
+
+  .sub {
+    font-size: 14px;
   }
 
   .actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch; /* ✅ FIX alignment */
+    gap: 16px;
+    width: 100%;
+  }
+
+  .btnPrimary,
+  .btnGhost {
+    width: 100%;          /* ✅ full width buttons */
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+.meta {
+  margin-top: 16px; /* closer to CTA */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  
+  justify-content: flex-start; /* not center */
+
+  font-size: 13px;
+  color: var(--c-muted);
+}
+
+/* Each item */
+.meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.meta span {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+@media (max-width: 768px) {
+  .meta {
+    justify-content: center;
+  }
+
+  .meta span {
+    font-size: 12px;
   }
 }

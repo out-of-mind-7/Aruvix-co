@@ -36,11 +36,10 @@ export default function Hero() {
 
       </div>
 
-      {/* Trust line (instead of fake stats) */}
-      <div className={styles.statsRow}>
-        <p style={{ opacity: 0.7 }}>
-          ⚡ Delivered in 2–3 days • 💬 WhatsApp enquiry system • 💰 Affordable pricing
-        </p>
+      <div className={styles.meta}>
+      <span>⚡ Delivered in 2–3 days</span>
+      <span>💬 WhatsApp enquiry system</span>
+      <span>💰 Affordable pricing</span>
       </div>
 
     </section>
